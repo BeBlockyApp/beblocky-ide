@@ -1,0 +1,37 @@
+<div routerLinkActive="active" class="course">
+
+    <div class="course-about">
+        <div class = "course-image">
+            <img src="../../../assets/svg/desktopwindow.svg" alt="">
+        </div>
+        <h3>{{ courseName | truncate:8 }} </h3>
+
+        <!-- <p>{{ courseDescription | truncate:8 }}</p> -->
+    </div>
+    <div *ngIf="user.role != 'admin'" class="course-progress">
+        <div class="course-progress-bar" [style.width.%]="courseProgress">
+        </div>
+    </div>
+    <div class="course-action-button">
+        <a *ngIf="user.role == 'user' && !courseProgress" routerLink="/ide/{{ courseId }}" class="course-goto-button">
+            Start Course
+            <fa-icon class="sidebar-menu-item-icon" [icon]="gotoIcon"></fa-icon>
+        </a>
+        <a *ngIf="user.role == 'user' && courseProgress" routerLink="/ide/{{ courseId }}" class="course-goto-button">
+            Continue Course
+            <fa-icon class="sidebar-menu-item-icon" [icon]="gotoIcon"></fa-icon>
+        </a>
+        <a *ngIf="user.role == 'admin'" routerLink="/ide/{{ courseId }}" class="course-goto-button">
+            <fa-icon class="sidebar-menu-item-icon" [icon]="gotoIcon"></fa-icon>
+        </a>
+
+        <a *ngIf="user.role == 'admin'" routerLink="/admin/edit-course/{{
+            courseId }}" class="course-goto-button">
+            <fa-icon class="sidebar-menu-item-icon" [icon]="editIcon"></fa-icon>
+        </a>
+        <a *ngIf="user.role == 'admin'" routerLink="/admin/delete-course/{{
+            courseId }}" class="course-goto-button">
+            <fa-icon class="sidebar-menu-item-icon" [icon]="deleteIcon"></fa-icon>
+        </a>
+    </div>
+</div>

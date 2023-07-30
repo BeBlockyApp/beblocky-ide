@@ -1,0 +1,131 @@
+<div class="main-container">
+  <div class="mobile-sign-in" *ngIf="mobileToggle">
+    <form
+      [formGroup]="loginForm"
+      onsubmit="event.preventDefault()"
+      (submit)="login()">
+      <h1>Sign In</h1>
+      <br />
+      <input
+        formControlName="username"
+        placeholder="Username"
+        required
+        type="text"
+        />
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="Password"
+        />
+      <div class="success">
+        <p>{{ success }}</p>
+      </div>
+      <div class="error">
+        <p>{{ error }}</p>
+      </div>
+
+
+      <button type="submit">
+        <span *ngIf="!isButtonDisabled">Sign In</span>
+        <app-progress-ripples *ngIf="isButtonDisabled"></app-progress-ripples>
+      </button>
+      <h5 class="sign-up" (click)="toggle()">Sign Up</h5>
+    </form>
+  </div>
+
+  <div class="mobile-sign-up" *ngIf="!mobileToggle">
+    <form
+      [formGroup]="signupForm"
+      (submit)="signup()"
+      onsubmit="event.preventDefault()">
+      <h1>Create Account</h1>
+      <br />
+      <input formControlName="name" placeholder="Username" />
+      <input formControlName="email" placeholder="Email" />
+      <input formControlName="password" placeholder="Password" />
+ <div class="success">
+          <p>{{ success }}</p>
+        </div>
+        <div class="error">
+          <p>{{ error }}</p>
+        </div>
+
+      <button type="submit">SignUp</button>
+      <h5 class="sign-up" (click)="toggle()">Sign Up</h5>
+    </form>
+  </div>
+
+  <div
+    class="container"
+    [ngClass]="{ 'right-panel-active': isClassActive }"
+    id="container">
+    <div class="form-container sign-in-container">
+      <form
+        [formGroup]="loginForm"
+        onsubmit="event.preventDefault()"
+        (submit)="login()">
+        <h1 class = "heads">Sign In</h1>
+        <br />
+        <input
+          formControlName="username"
+          placeholder="Username"
+          required
+          type="text"
+          />
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="Password"
+          />
+        <div class="error">
+          <p>{{ error }}</p>
+        </div>
+
+        <button type="submit" [disabled]="isButtonDisabled">
+          <span *ngIf="!isButtonDisabled" >Sign In</span>
+          <app-progress-ripples *ngIf="isButtonDisabled"></app-progress-ripples>
+        </button>
+      </form>
+    </div>
+
+    <div class="form-container sign-up-container">
+      <form
+        [formGroup]="signupForm"
+        (submit)="signup()"
+        onsubmit="event.preventDefault()">
+        <h1 class = "heads">Create Account</h1>
+        <br />
+        <input formControlName="name" placeholder="Username" />
+        <input formControlName="email" placeholder="Email" />
+        <input formControlName="password" placeholder="Password" />
+        <div class="success">
+          <p>{{ success }}</p>
+        </div>
+        <div class="error">
+          <p>{{ error }}</p>
+        </div>
+        <button type="submit" [disabled]="isButtonDisabled">
+          <span *ngIf="!isButtonDisabled" >Sign Up</span>
+          <app-progress-ripples *ngIf="isButtonDisabled"></app-progress-ripples>
+        </button>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1 class = "heads">Welcome Back!</h1>
+          <br />
+          <p class = "parts">Let's continue Coding!</p>
+          <br />
+          <button class="ghost" id="signIn" (click)="cheaker()">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1 class = "heads">Super, Let's Code!</h1>
+          <p class = "parts">Enter your details and lets get going</p>
+          <button class="ghost" id="signUp" (click)="cheaker()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

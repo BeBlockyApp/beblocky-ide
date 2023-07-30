@@ -1,0 +1,21 @@
+<header class="header">
+    <div class="header-username">
+        <h1>@{{ user.username }}</h1>
+        <span *ngIf="user.role == 'admin'">
+            <fa-icon [icon]="lockIcon"></fa-icon>
+            Admin
+        </span>
+
+        <span *ngIf="user.role == 'user'">
+            <fa-icon [icon]="lockIcon"></fa-icon>
+            User
+        </span>
+    </div>
+    <nav class="header-navigation">
+        <ul class="nav-list">
+            <li class="nav-list-item"><a
+                    [routerLink]="['/dashboard/my-courses']"> My Courses </a></li>
+            <li class="nav-list-item"><a (click)="logout()"> Logout </a></li>
+        </ul>
+    </nav>
+</header>

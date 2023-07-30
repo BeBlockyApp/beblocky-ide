@@ -1,0 +1,445 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+// $border: #ff9800;
+$background--primary: #def0e2;
+$background--secondary: #ffffff;
+$clr-light: #a7d464;
+
+$clr--secondary: #5baf48;
+$clr--primary: #703d99;
+
+$clr--delete: #EF6262;
+$clr--add: #ff9800;
+$clr--save: #1D5B79;
+$clr--settings: #703d99;
+
+$ff-main: "Montserrat", sans-serif;
+
+.course-creator {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  gap: 1rem;
+  background: $background--primary;
+  color: $clr--primary;
+  font-family: $ff-main;
+  min-height: 100vh;
+
+  &__manage-course {
+    border: 1px solid $clr--secondary;
+    border-radius: 20px;
+
+    background: $background--secondary;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    flex-direction: row;
+
+    &__course-information {
+      height: 100%;
+      width: 70%;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      // padding: 1rem;
+      color: $clr--primary;
+
+      border-radius: 20px;
+
+      .form-holder {
+        background: $background--primary;
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        padding-top: 0;
+        gap: 0.1rem;
+        justify-content: center;
+        border: 1px solid $clr-light;
+        border-radius: 10px;
+
+        label {
+          color: $clr--primary;
+          font-family: $ff-main;
+          font-size: 1rem;
+          font-weight: 400;
+        }
+
+        input,
+        textarea,
+        select {
+          font-size: 1.5rem;
+          color: $clr--primary;
+          background: transparent;
+          outline: none;
+          border: none;
+        }
+      }
+    }
+
+    &__buttons {
+      height: 100%;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        margin-bottom: 1rem;
+
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 1.1rem;
+          font-weight: 400;
+        }
+      }
+
+      &__buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // justify-content: center;
+        gap: 1rem;
+      }
+    }
+  }
+
+  &__lessons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .editing {
+      // min-height: 100vh;
+      padding: 0 2rem;
+      transition: all 0.5s ease-in-out;
+      // box-shadow: 0px 0px 10px 0px $clr--secondary;
+    }
+
+    .idle {
+      transition: all 0.5s ease-in-out;
+      width: 100%;
+      padding: 0;
+
+      .course-creator__lessons__lesson__manage-lesson {
+        border-radius: 20px;
+        border: none;
+      }
+    }
+
+    &__lesson {
+      transition: all 0.5s ease-in-out;
+      background: $background--primary;
+
+      border: 1px solid $clr--secondary;
+      border-radius: 20px;
+
+      width: 100%;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &__manage-lesson {
+        width: 100%;
+        border: 1px solid $clr--secondary;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+
+        border-top: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        background: $background--secondary;
+        padding: 1rem;
+
+        transition: all 0.5s ease-in-out;
+
+        &__lesson-information {
+          height: 100%;
+          width: 70%;
+
+          // border: 2px solid #333;
+          border-radius: 20px;
+
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+
+          .form-holder {
+            background: $background--primary;
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+            padding-top: 0;
+            gap: 0.1rem;
+            justify-content: center;
+            border: 1px solid $clr-light;
+            border-radius: 10px;
+
+            label {
+              color: $clr--primary;
+              font-family: $ff-main;
+              font-size: 1rem;
+              font-weight: 400;
+            }
+
+            input,
+            textarea,
+            select {
+              font-size: 1.5rem;
+              color: $clr--primary;
+              background: transparent;
+              outline: none;
+              border: none;
+            }
+          }
+        }
+
+        &__buttons {
+          height: 100%;
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          // justify-content: center;
+          // align-items: center;
+
+          &__title {
+            h2 {
+              font-size: 1.5rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+            }
+
+            p {
+              font-size: 1.1rem;
+              font-weight: 400;
+              margin-bottom: 1rem;
+            }
+          }
+
+          &__buttons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            align-items: end;
+            gap: 0.5rem;
+          }
+        }
+      }
+
+      &__slides {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        height: 60vh;
+        padding-bottom: 1rem;
+
+        &__preview {
+          overflow-y: scroll;
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+
+          gap: 1rem;
+          padding: 0.4rem;
+
+          &__title {
+            h2 {
+              font-size: 1.5rem;
+              font-weight: 700;
+              margin-bottom: 1rem;
+            }
+
+            p {
+              font-size: 1.1rem;
+              font-weight: 400;
+              margin-bottom: 1rem;
+            }
+          }
+
+          .editing-slide-preview {
+            border: 1px solid $clr--primary;
+            box-shadow: 0px 2px 5px 0px $background--secondary;
+          }
+
+          &__slide {
+            min-height: 200px;
+            max-height: 200px;
+            border-radius: 0 0 2rem 2rem;
+            width: 100%;
+            background: $background--secondary;
+            cursor: pointer;
+          }
+        }
+
+        .editing-slide {
+          display: block;
+        }
+
+        .idle-slide {
+          display: none;
+        }
+
+        &__slide {
+          height: 100%;
+          width: 70%;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          border: 1px solid $clr--primary;
+          border-radius: 20px;
+          padding-bottom: 1rem;
+          gap: 1rem;
+
+          &__main-form {
+            height: 90%;
+            display: flex;
+            flex-grow: 1;
+            border-radius: 20px 20px 0 0;
+            flex-direction: column;
+            gap: 1rem;
+            background: $background--secondary;
+            padding: 1rem;
+
+            overflow-y: scroll;
+
+            .form-holder {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              padding: 0.5rem;
+              padding-top: 0;
+              gap: 0.1rem;
+
+              label {
+                color: $clr--primary;
+                font-family: $ff-main;
+                font-size: 1rem;
+                font-weight: 400;
+              }
+            }
+
+            &__title {
+              input {
+                background: transparent;
+                border: none;
+                outline: none;
+                font-size: 2rem;
+              }
+            }
+
+            &__content {
+              textarea {
+                text-align: justify;
+                margin-bottom: 1rem;
+                font-size: 1.3rem;
+                background: transparent;
+                border: none;
+                outline: none;
+              }
+            }
+
+            &__code {
+              overflow-y: scroll;
+
+              textarea {
+                height: 100%;
+                font-family: monospace;
+                background-color: #404040;
+                color: white;
+                font-weight: bolder;
+                border-radius: 0.75rem;
+                padding: 0.5rem;
+                white-space: pre;
+              }
+            }
+          }
+
+          &__buttons {
+            padding-top: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+
+            &__change-title-font {
+              select {
+                background: transparent;
+                border: none;
+                outline: none;
+                width: 100%;
+                color: white;
+              }
+            }
+
+            &__change-content-font {
+              select {
+                background: transparent;
+                border: none;
+                outline: none;
+                width: 100%;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.delete {
+  background: $clr--delete;
+  color: #fff;
+}
+
+.add {
+  background: $clr--add;
+  color: #fff;
+}
+
+.save {
+  background: $clr--save;
+  color: #fff;
+}
+
+.setting {
+  background: $clr--settings;
+  color: #fff;
+}
+
+.error, .success {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: $ff-main;
+}
+
+.error {
+  color: $clr--delete;
+}
+
+.success {
+  color: $clr--secondary;
+}
+.image-container{
+  background-color: #5baf48;
+}

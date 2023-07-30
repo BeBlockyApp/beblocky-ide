@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="header">
+        <h1>Our HTML Courses</h1>
+    </div>
+    <div class="spinner">
+        <app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+    </div>
+    <app-courses *ngIf="courses && courses.length > 0" [courses]="courses"></app-courses>
+    <div class="sorry" *ngIf="!showSpinner && courses.length === 0">
+        Sorry we don't have courses for you.
+    </div>
+</div>
+
