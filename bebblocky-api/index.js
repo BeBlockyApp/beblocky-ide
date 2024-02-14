@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
 //Database linker
 mongoose
   .connect(
-    "mongodb+srv://afmtoday:OlxwPFCF0rLMnA3e@cluster0.edrrjyh.mongodb.net/bebblocky?retryWrites=true&w=majority"
+    "mongodb+srv://appbeblocky:uxXJgrDdA0QWcC7P@cluster0.ujx4qi9.mongodb.net/?retryWrites=true&w=majority"
   )
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Error connecting to MongoDB", err));
