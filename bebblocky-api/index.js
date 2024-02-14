@@ -33,6 +33,7 @@ io.on('connection', (socket) => {
 });
 
 //Database linker
+
 mongoose
   .connect(
     "mongodb+srv://appbeblocky:uxXJgrDdA0QWcC7P@cluster0.ujx4qi9.mongodb.net/?retryWrites=true&w=majority"
