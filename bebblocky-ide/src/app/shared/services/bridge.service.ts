@@ -10,7 +10,6 @@ import { Course } from '../models/course.dto';
 })
 export class BridgeService {
   progress: any
-
   constructor(
     private http: HttpClient
   ) { }
